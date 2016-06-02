@@ -1,0 +1,23 @@
+<div class="w-row" style="padding: 20px;">
+    <div class="w-col w-col-3" ng-repeat="a in adverts">
+        <div class="divpromo" ng-show="!a.banner"
+             style="background-image: url('http://104.131.113.114:3004/api/containers/entity_{{a.entity.id}}/download/{{a.id}}.advert'); background-size: cover; background-repeat: no-repeat;">
+            <div class="fechapromo">
+                <div class="txtfechapromo">{{ a.date_description }}</div>
+            </div>
+            <div class="titulopromo">
+                <div class="txttitpromo">{{a.title}}</div>
+            </div>
+            <div class="descripromo">
+                <div class="txtdescripromo">{{ a.subtitle}}</div>
+            </div>
+            <div class="divsubtit">
+                <div class="txtsubtit">{{a.description}}</div>
+            </div>
+        </div>
+        <div class="divpromo" ng-show="a.banner"
+             style="background-image: url('http://104.131.113.114:3004/api/containers/entity_{{a.entity.id}}/download/{{a.id}}.advert'); background-size: cover; background-repeat: no-repeat;">
+
+        </div>
+    </div>
+</div>

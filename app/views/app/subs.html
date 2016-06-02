@@ -1,0 +1,52 @@
+<div class="w-section secciondatos" style="height: 600px; !important">
+    <div style="color: white">
+    </div>
+    <div class="w-col">
+        <div class="w-col w-col-3" ng-repeat="e in entities track by $index">
+            <div class="divpublicidades">
+                <div class="w-col w-col-3">
+                    <div class="divpubliall" style="width: 350px; height: 230px;">
+                        <div class="w-preserve-3d divpubliatras"></div>
+                        <div class="w-preserve-3d divcartas">
+                            <div class="w-preserve-3d cartaatras" >
+                                <a href="http://{{e[0].subdomain}}.arg.az" target="_blank">
+                                    <div class="divcartaopaco back">
+                                        <img src="http://104.131.113.114:3004/api/containers/entity_{{e[0].id}}/download/logo.image" class="imglogoatras">
+                                        <div class="atrasdirecion">{{ e[0].address }}</div>
+                                        <div class="atrastelefono">{{e[0].phone}}</div>
+                                        <a href="http://{{e[0].subdomain.name}}.arg.az" target="_blank">
+                                            <div class="atraspagina">{{e[0].subdomain.name}}.arg.az</div>
+                                        </a>
+                                    </div>
+                                </a>
+                                <div class="w-clearfix divdatosatras">
+                                    <div class="divatras1"><a href="#" class="linkatras1">Asociarse</a><img src="images/drink.png">
+                                    </div>
+                                    <div class="divatras2"><img src="images/drink.png"><a href="#" class="linkatras1 blanco">me gusta</a>
+                                    </div>
+                                    <div class="divatras3"><img src="images/drink.png"><a href="#" class="linkatras1 blanco">compartir</a>
+                                    </div>
+                                </div><img width="394" src="http://104.131.113.114:3004/api/containers/entity_{{e[0].id}}/download/cover.image" class="imgcarta">
+                            </div>
+                            <div class="w-preserve-3d cartaadelante">
+                                <div class="divcartaopaco">
+                                    <div class="w-clearfix divfrente">
+                                        <div class="w-clearfix divsocios">
+                                            <div class="sociosfrente">210 socios</div>
+                                        </div>
+                                        <div class="divestrellas"><img src="images/stars.png">
+                                        </div>
+                                    </div>
+                                </div><img src="http://104.131.113.114:3004/api/containers/entity_{{e[0].id}}/download/logo.image" class="imgcartalogo">
+                                <img width="394" src="http://104.131.113.114:3004/api/containers/entity_{{e[0].id}}/download/cover.image" class="imgcarta">
+                                <div class="divcartatitulo"><img src="images/drink.png" class="iconocartacomercio">
+                                    <div class="titcartacomercio">{{e[0].name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

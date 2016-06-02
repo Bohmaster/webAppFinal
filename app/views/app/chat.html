@@ -1,0 +1,26 @@
+<div class="w-section secciondatos">
+    <div class="w-row">
+      <div class="w-col w-col-3 col1arbol chat">
+        <div class="divarbol chat">
+          <div class="divbuscadorarbol">
+            <div class="searcharbol" contenteditable ng-model="filter"></div>
+            <div class="botonsearcharbol"><img src="images/lupa.png" class="iconosearcharbol">
+            </div>
+          </div>
+          <div class="w-clearfix divchatarbol" ng-repeat="cr in chatrooms | filter: filter" ui-sref="base.app.chat.result({chatroom: cr.id})">
+            <div class="chatarboldate">{{ cr.last_activity }}</div>
+            <div class="w-clearfix datoschatarbol">
+              <div class="comerciochatarbol">{{ cr.users[0].name }}</div>
+
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="w-col w-col-9 col2arbol">
+        <ui-view></ui-view>
+      </div>
+      
+    </div>
+  </div>

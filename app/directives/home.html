@@ -1,0 +1,181 @@
+<div data-collapse="medium" data-animation="default" data-duration="400" class="w-nav navbar"><a href="#"
+                                                                                                 class="w-button botonregistrate">martin</a>
+    <a href="#" class="w-nav-brand brand"><img width="75" src="images/logoadminhd.png" class="logo">
+    </a>
+    <nav role="navigation" class="w-nav-menu navmenu"><a class="w-nav-link navlink"
+                                                         ui-sref="base.app.entities.categories">Rubros</a>
+        <div data-delay="0" class="w-dropdown">
+            <div class="w-dropdown-toggle navlink">
+                <div ui-sref="base.app.adverts">Novedades</div>
+                <div class="w-icon-dropdown-toggle"></div>
+            </div>
+            <nav class="w-dropdown-list droplist"><a href="#" class="w-dropdown-link droplink">PERFIL 1</a><a href="#"
+                                                                                                              class="w-dropdown-link droplink">PERFIL
+                2</a><a href="#" class="w-dropdown-link droplink">PERFIL 3</a>
+            </nav>
+        </div>
+        <a ui-sref="base.app.chat" class="w-nav-link navlink messages">Mensajes</a><a ui-sref="base.app.subs" class="w-nav-link navlink">Suscripciones</a>
+    </nav>
+    <div class="w-nav-button">
+        <div class="w-icon-nav-menu"></div>
+    </div>
+</div>
+<div class="divimginicio">
+    <div class="divtextoinicio">
+        <h1 class="headinginicio1">Busca los comercios <br>o servicios de interés&nbsp;</h1>
+        <div class="divbuscador">
+            <div class="w-form">
+                <form id="email-form" name="email-form" data-name="Email Form">
+                    <input id="name" ng-model="query" type="text" placeholder="Restaurants, Gasolinerías, Ferreterías"
+                           name="name" data-name="Name" class="w-input buscador">
+                </form>
+            </div>
+            <button ui-sref="base.app.search({query: query})"
+                    style="padding:10px; margin: 0 auto;display: table; font-family: Montserrat, sans-serif">BUSCAR
+            </button>
+        </div>
+    </div>
+    <a href="#" class="w-button botonapp">Descargate<br>la App</a>
+</div>
+<div class="separador"></div>
+<div class="promos">
+    <div class="titseccion">Clubes</div>
+    <div class="divpublicidades">
+        <div class="w-col w-col-3" ng-repeat="e in entities">
+            <div class="divpubliall" style="width: 88%; height: 230px;">
+                <div class="w-preserve-3d divpubliatras"></div>
+                <div class="w-preserve-3d divcartas">
+                    <div class="w-preserve-3d cartaatras">
+                        <a href="http://{{e.subdomain}}.arg.az">
+                            <div class="divcartaopaco back">
+                                <img src="http://104.131.113.114:3004/api/containers/entity_{{e.id}}/download/logo.image"
+                                     class="imglogoatras">
+                                <div class="atrasdirecion">{{ e.address }}</div>
+                                <div class="atrastelefono">{{e.phone}}</div>
+                                <a href="http://{{e.subdomain.name}}.arg.az" target="_blank">
+                                    <div class="atraspagina">{{e.subdomain.name}}.arg.az</div>
+                                </a>
+                            </div>
+                        </a>
+                        <div class="w-clearfix divdatosatras">
+                            <div class="divatras1"><a href="#" class="linkatras1">Asociarse</a><img
+                                    src="images/drink.png">
+                            </div>
+                            <div class="divatras2"><img src="images/drink.png"><a href="#" class="linkatras1 blanco">me
+                                gusta</a>
+                            </div>
+                            <div class="divatras3"><img src="images/drink.png"><a href="#" class="linkatras1 blanco">compartir</a>
+                            </div>
+                        </div>
+                        <img width="394"
+                             src="http://104.131.113.114:3004/api/containers/entity_{{e.id}}/download/cover.image"
+                             class="imgcarta">
+                    </div>
+                    <div class="w-preserve-3d cartaadelante">
+                        <div class="divcartaopaco">
+                            <div class="w-clearfix divfrente">
+                                <div class="w-clearfix divsocios">
+                                    <div class="sociosfrente">210 socios</div>
+                                </div>
+                                <div class="divestrellas"><img src="images/stars.png">
+                                </div>
+                            </div>
+                        </div>
+                        <img src="http://104.131.113.114:3004/api/containers/entity_{{e.id}}/download/logo.image"
+                             class="imgcartalogo">
+                        <img width="394"
+                             src="http://104.131.113.114:3004/api/containers/entity_{{e.id}}/download/cover.image"
+                             class="imgcarta">
+                        <div class="divcartatitulo"><img src="images/drink.png" class="iconocartacomercio">
+                            <div class="titcartacomercio">{{e.name}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="titseccion">Destacados</div>
+    <div class="w-row">
+        <div class="w-col w-col-3" ng-repeat="a in adverts">
+            <div class="divpromo" ng-show="!a.banner"
+                 style="background-image: url('http://104.131.113.114:3004/api/containers/entity_{{a.entity.id}}/download/{{a.id}}.advert'); background-size: cover; background-repeat: no-repeat;">
+                <div class="fechapromo">
+                    <div class="txtfechapromo">{{ a.date_description }}</div>
+                </div>
+                <div class="titulopromo">
+                    <div class="txttitpromo">{{a.title}}</div>
+                </div>
+                <div class="descripromo">
+                    <div class="txtdescripromo">{{ a.subtitle}}</div>
+                </div>
+                <div class="divsubtit">
+                    <div class="txtsubtit">{{a.description}}</div>
+                </div>
+            </div>
+            <div class="divpromo" ng-show="a.banner"
+                 style="background-image: url('http://104.131.113.114:3004/api/containers/entity_{{a.entity.id}}/download/{{a.id}}.advert'); background-size: cover; background-repeat: no-repeat;">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <mapa dir="{{directions}}"></mapa>
+</div>
+<div class="divcontacto">
+    <div class="w-row rowcontacto">
+        <div class="w-col w-col-6 col1contacto">
+            <h1 class="contactos">CONTACTOS</h1>
+            <div class="divformctacto">
+                <p class="txtcontacto">Quieres sugerir un local?
+                    <br>Llena los siguientes datos para que
+                    <br>esté en nuestra base de datos.</p>
+                <div class="w-form">
+                    <form id="email-form-2" name="email-form-2" data-name="Email Form 2" class="w-clearfix form">
+                        <input id="Rubro" type="text" placeholder="Rubro" name="Rubro" data-name="Rubro"
+                               class="w-input txtfieldctacto">
+                        <input id="name-2" type="text" placeholder="Nombre" name="name" data-name="Name 2"
+                               class="w-input txtfieldctacto">
+                        <input id="name-2" type="text" placeholder="Domicilio" name="name" data-name="Name 2"
+                               class="w-input txtfieldctacto">
+                        <input id="name-2" type="text" placeholder="Teléfono" name="name" data-name="Name 2"
+                               class="w-input txtfieldctacto">
+                        <input type="submit" value="ENVIAR" data-wait="Please wait..." class="w-button botonenviar">
+                    </form>
+                    <div class="w-form-done">
+                        <p>Thank you! Your submission has been received!</p>
+                    </div>
+                    <div class="w-form-fail">
+                        <p>Oops! Something went wrong while submitting the form</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-col w-col-6 col2contacto" ng-controller="LoginCtrl">
+            <div class="divcontactoaz">
+                <p class="txtcontacto azul">Sé socio de AZ Club.</p>
+                <div class="divface">
+                    <div class="w-form">
+                        <form id="email-form-2" name="email-form-2" data-name="Email Form 2" class="form">
+                            <input id="Rubro-2" type="text" placeholder="Email" name="Rubro-2" data-name="Rubro 2"
+                                   class="w-input txtfieldctacto">
+                            <input id="name-2" type="text" placeholder="Password" name="name" data-name="Name 2"
+                                   class="w-input txtfieldctacto">
+                        </form>
+                        <div class="w-form-done">
+                            <p>Thank you! Your submission has been received!</p>
+                        </div>
+                        <div class="w-form-fail">
+                            <p>Oops! Something went wrong while submitting the form</p>
+                        </div>
+                    </div>
+                    <div class="textingface">ó inicia sesión con</div>
+                    <a class="w-inline-block linkface" ng-click="openFacebookLogin()"><img src="images/logo_facebook.png" class="imgface">
+                    </a>
+                    <div class="textingface">No recuerdas tu contraseña? <a class="linkrecupera" href="#">Recupérala</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
